@@ -1,0 +1,552 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/png" href="favicon.png"><title>坦克世界——免费大型多人在线坦克对战游戏。即刻下载，免费畅玩！</title><meta name="description" content="坦克世界是屡获殊荣的大型多人在线坦克对战游戏。您可以驾驶600多台来自C系，S系，D系，F系，Y系，R系，M系，J系，V系，I系和B系的装甲战车，参与激烈的团队PVP战斗。"><meta property="og:image" content="https://p5.ssl.qhimg.com/d/inn/4fb53701b30b/china/og.jpg"><meta property="og:title" content="坦克世界——免费大型多人在线坦克对战游戏。即刻下载，免费畅玩！"><meta property="og:description" content="坦克世界是屡获殊荣的大型多人在线坦克对战游戏。您可以驾驶600多台来自C系，S系，D系，F系，Y系，R系，M系，J系，V系，I系和B系的装甲战车，参与激烈的团队PVP战斗。"><script>window.__INITIAL_STATE__ = {
+      "realms_map": {
+        "type": "list",
+        "relation_type": "one-to-all",
+        "admintitle": "Realms mapping (all landings should be here, including this one)",
+        "fields": {
+          "title": {
+            "type": "text",
+            "restrictions": {},
+            "admintitle": "Realm title"
+          },
+          "code": {
+            "type": "text",
+            "restrictions": {
+              "max": 10
+            },
+            "admintitle": "Realm code (ru, eu, na, sg)"
+          },
+          "id": {
+            "type": "text",
+            "restrictions": {
+              "max": 10
+            },
+            "admintitle": "Layout ID"
+          }
+        },
+        "value": [
+          {
+            "title": "СНГ",
+            "code": "ru",
+            "id": 1234
+          },
+          {
+            "title": "Europe",
+            "code": "eu",
+            "id": 1235
+          }
+        ]
+      },
+      "languages_map": {
+        "type": "list",
+        "relation_type": "one-to-all",
+        "admintitle": "Languages mapping (rename languages)",
+        "fields": {
+          "code": {
+            "type": "text",
+            "restrictions": {
+              "max": 10
+            },
+            "admintitle": "Language code (ru, en, ...)"
+          },
+          "title": {
+            "type": "text",
+            "admintitle": "Language new title"
+          }
+        },
+        "value": [
+          {
+            "code": null,
+            "title": null
+          }
+        ]
+      },
+      "meta": {
+        "type": "object",
+        "admintitle": "Metadata",
+        "fields": {
+          "title": {
+            "type": "text",
+            "admintitle": "Meta Title",
+            "value": "title meta"
+          },
+          "description": {
+            "type": "text",
+            "admintitle": "Meta Description",
+            "value": "description meta"
+          }
+        }
+      },
+      "global": {
+        "type": "object",
+        "admintitle": "Globals",
+        "fields": {
+          "favicon": {
+            "type": "image",
+            "restrictions": {
+              "ext": "png"
+            },
+            "admintitle": "favicon.png (recommended size: 192*192)",
+            "value": null
+          },
+          "themecolor": {
+            "type": "text",
+            "admintitle": "Color of browser toolbar(tabs in chrome). Example: #db5945",
+            "value": null
+          },
+          "gtm": {
+            "type": "text",
+            "admintitle": "GTM ID. Default id for landings - GTM-58Z37MT",
+            "value": null
+          },
+          "bgcolor": {
+            "type": "text",
+            "admintitle": "Global background color",
+            "value": null
+          },
+          "color": {
+            "type": "text",
+            "admintitle": "Global text color",
+            "value": null
+          },
+          "detect_lang_geoip": {
+            "type": "checkbox",
+            "admintitle": "Recommend user to use geoip language.",
+            "value": true
+          }
+        }
+      },
+      "global_styles": {
+        "type": "object",
+        "relation_type": "one-to-all",
+        "admintitle": "Global styles",
+        "fields": {
+          "css": {
+            "type": "text",
+            "admintitle": "CSS rules",
+            "value": null
+          }
+        }
+      },
+      "ctablock": {
+        "type": "object",
+        "admintitle": "Cta buttons",
+        "fields": {
+          "cta_text": {
+            "type": "text",
+            "admintitle": "Cta. Text",
+            "value": "激活"
+          },
+          "cta_href": {
+            "type": "text",
+            "admintitle": "Cta. Link",
+            "value": "https://wotgame.cn/auth/oid/new/?next=/zh-cn/game/download/"
+          },
+          "cta_classes": {
+            "type": "text",
+            "admintitle": "Cta. Classes: link cta cta--flat cta--flat-red cta--blue cta--responsive cta--small cta--block cta--radius cta--radius5",
+            "value": null
+          },
+          "cta_closed": {
+            "type": "checkbox",
+            "admintitle": "Cta. Closed state",
+            "value": null
+          },
+          "cta_tag": {
+            "type": "text",
+            "admintitle": "Cta. Tag. Example: a , button",
+            "value": null
+          },
+          "cta_target": {
+            "type": "text",
+            "admintitle": "Cta. Target. Example: _self , _blank",
+            "value": null
+          },
+          "cta_secondarytext": {
+            "type": "text",
+            "admintitle": "Cta. Secondary. Text",
+            "value": null
+          },
+          "cta_secondaryhref": {
+            "type": "text",
+            "admintitle": "Cta. Secondary. Link",
+            "value": null
+          },
+          "cta_secondaryclasses": {
+            "type": "text",
+            "admintitle": "Cta. Secondary. Classes: link cta cta--flat cta--flat-red cta--blue cta--responsive cta--small cta--block cta--radius cta--radius5",
+            "value": null
+          },
+          "cta_secondaryclosed": {
+            "type": "checkbox",
+            "admintitle": "Cta. Secondary. Closed state",
+            "value": null
+          },
+          "cta_secondarytag": {
+            "type": "text",
+            "admintitle": "Cta. Secondary. Tag. Example: a , button",
+            "value": null
+          },
+          "cta_secondarytarget": {
+            "type": "text",
+            "admintitle": "Cta. Secondary. Target. Example: _self , _blank",
+            "value": null
+          },
+          "cta_description": {
+            "type": "text",
+            "admintitle": "Cta. Description under buttons",
+            "value": null
+          },
+          "cta_description_maxwidth": {
+            "type": "text",
+            "admintitle": "Cta. Description max width",
+            "value": null
+          },
+          "cta_valign": {
+            "type": "text",
+            "admintitle": "Cta. Buttons vertical alignment (top, center, bottom or any value of justify-content property)",
+            "value": null
+          },
+          "cta_minwidth": {
+            "type": "text",
+            "admintitle": "Cta. Minimal button width",
+            "value": null
+          },
+          "cta_vertical": {
+            "type": "checkbox",
+            "admintitle": "Cta. Force vertical mode",
+            "value": null
+          },
+          "cta_block": {
+            "type": "checkbox",
+            "admintitle": "Cta. Force block mode (take full width)",
+            "value": null
+          }
+        }
+      },
+      "slide_default": {
+        "type": "object",
+        "admintitle": "Default slide",
+        "fields": {
+          "bgcolor": {
+            "type": "text",
+            "admintitle": "Background color",
+            "value": "#000"
+          },
+          "bg_m": {
+            "type": "image",
+            "admintitle": "Background mobile image",
+            "value": "china/v2/bg_v2_m.jpg"
+          },
+          "bg": {
+            "type": "image",
+            "admintitle": "Background image",
+            "value": "china/v2/bg_v2.jpg"
+          },
+          "bgp_m": {
+            "type": "text",
+            "admintitle": "Background mobile position",
+            "value": null
+          },
+          "bgp": {
+            "type": "text",
+            "admintitle": "Background position",
+            "value": null
+          },
+          "color": {
+            "type": "text",
+            "admintitle": "Text color for this slide",
+            "value": null
+          },
+          "logo": {
+            "type": "image",
+            "admintitle": "Logo",
+            "value": "china/GUP_collaboration_logo_360.png"
+          },
+          "logoalt": {
+            "type": "text",
+            "admintitle": "Logo alternative text (use in situations where the image cannot be seen/displayed)",
+            "value": "World of Tanks"
+          },
+          "logolink": {
+            "type": "text",
+            "admintitle": "Optional. Logo image link",
+            "value": null
+          },
+          "logotarget": {
+            "type": "checkbox",
+            "admintitle": "Set target='_blank' to logolink. (Open in new tab)",
+            "value": false
+          },
+          "logomaxwidth": {
+            "type": "text",
+            "admintitle": "Logo max width",
+            "value": null
+          },
+          "subTitle": {
+            "type": "text",
+            "admintitle": "Subtitle",
+            "value": "激活后即可获得奖励！"
+          },
+          "description": {
+            "type": "text",
+            "admintitle": "Description",
+            "value": null
+          },
+          "textshadow": {
+            "type": "checkbox",
+            "admintitle": "Add text shadow to this slide?",
+            "value": true
+          },
+          "valign": {
+            "type": "text",
+            "admintitle": "Vertical alignment of content (top, center, bottom or any value of justify-content property)",
+            "value": null
+          },
+          "cta_text": {
+            "type": "text",
+            "admintitle": "Cta. Text",
+            "value": null
+          },
+          "cta_href": {
+            "type": "text",
+            "admintitle": "Cta. Link",
+            "value": null
+          },
+          "cta_classes": {
+            "type": "text",
+            "admintitle": "Cta. Classes: link cta cta--flat cta--flat-red cta--blue cta--responsive cta--small cta--block cta--radius cta--radius5",
+            "value": "cta cta--responsive cta--block cta--flat"
+          },
+          "cta_closed": {
+            "type": "checkbox",
+            "admintitle": "Cta. Closed state",
+            "value": null
+          },
+          "cta_tag": {
+            "type": "text",
+            "admintitle": "Cta. Tag. Example: a , button",
+            "value": null
+          },
+          "cta_target": {
+            "type": "text",
+            "admintitle": "Cta. Target. Example: _self , _blank",
+            "value": null
+          },
+          "cta_secondarytext": {
+            "type": "text",
+            "admintitle": "Cta. Secondary. Text",
+            "value": null
+          },
+          "cta_secondaryhref": {
+            "type": "text",
+            "admintitle": "Cta. Secondary. Link",
+            "value": null
+          },
+          "cta_secondaryclasses": {
+            "type": "text",
+            "admintitle": "Cta. Secondary. Classes: link cta cta--flat cta--flat-red cta--blue cta--responsive cta--small cta--block cta--radius cta--radius5",
+            "value": null
+          },
+          "cta_secondaryclosed": {
+            "type": "checkbox",
+            "admintitle": "Cta. Secondary. Closed state",
+            "value": null
+          },
+          "cta_secondarytag": {
+            "type": "text",
+            "admintitle": "Cta. Secondary. Tag. Example: a , button",
+            "value": null
+          },
+          "cta_secondarytarget": {
+            "type": "text",
+            "admintitle": "Cta. Secondary. Target. Example: _self , _blank",
+            "value": null
+          },
+          "cta_description": {
+            "type": "text",
+            "admintitle": "Cta. Description under buttons",
+            "value": "此奖励仅供坦克世界PC新用户领取。打开此活动页面后，用户需要在同一台设备上的同一次浏览器会话期间点击“激活”按钮，并完成账号注册才能领取奖励。"
+          },
+          "cta_description_maxwidth": {
+            "type": "text",
+            "admintitle": "Cta. Description max width",
+            "value": null
+          },
+          "cta_valign": {
+            "type": "text",
+            "admintitle": "Cta. Buttons vertical alignment (top, center, bottom or any value of justify-content property)",
+            "value": null
+          },
+          "cta_minwidth": {
+            "type": "text",
+            "admintitle": "Cta. Minimal button width",
+            "value": null
+          },
+          "cta_vertical": {
+            "type": "checkbox",
+            "admintitle": "Cta. Force vertical mode",
+            "value": null
+          },
+          "cta_block": {
+            "type": "checkbox",
+            "admintitle": "Cta. Force block mode (take full width)",
+            "value": null
+          }
+        }
+      },
+      "footer": {
+        "type": "object",
+        "admintitle": "Footer",
+        "fields": {
+          "bgcolor": {
+            "type": "text",
+            "admintitle": "Background color",
+            "value": "#000"
+          },
+          "bg_m": {
+            "type": "image",
+            "admintitle": "Background mobile image",
+            "value": "mock/SlideHero/hero-bg_m.jpg"
+          },
+          "bg": {
+            "type": "image",
+            "admintitle": "Background mobile image",
+            "value": "mock/SlideHero/hero-bg.jpg"
+          },
+          "bgp_m": {
+            "type": "text",
+            "admintitle": "Background mobile position",
+            "value": null
+          },
+          "bgp": {
+            "type": "text",
+            "admintitle": "Background position",
+            "value": null
+          },
+          "color": {
+            "type": "text",
+            "admintitle": "Text color for this slide",
+            "value": null
+          },
+          "colortext": {
+            "type": "text",
+            "admintitle": "Footer text color (dark gray by default)",
+            "value": null
+          },
+          "logo": {
+            "type": "image",
+            "admintitle": "Logo",
+            "value": "china/footer_logo.png"
+          },
+          "logoalt": {
+            "type": "text",
+            "admintitle": "Logo alternative text (use in situations where the image cannot be seen/displayed)",
+            "value": "World of Warships"
+          },
+          "logolink": {
+            "type": "text",
+            "admintitle": "Optional. Logo image link",
+            "value": null
+          },
+          "logotarget": {
+            "type": "checkbox",
+            "admintitle": "Set target='_blank' to logolink. (Open in new tab)",
+            "value": false
+          },
+          "logomaxwidth": {
+            "type": "text",
+            "admintitle": "Logo max width",
+            "value": null
+          },
+          "text": {
+            "type": "text",
+            "admintitle": "Footer text",
+            "value": "Wargaming.net保留所有权利 © GIRLS und PANZER Finale Projekt<br>Copyright 2016 YouXi.com 版权所有 趣游时代(北京)科技有限公司 北京市朝阳区酒仙桥路6号院2号楼1至17层102号内13层1302<br><a href='http://s5.ssl.qhres.com/static/b6e17859264cd813.pdf' target='_blank'>京ICP证京B2-20170671</a> | <a href='http://p1.ssl.qhimg.com/d/inn/4be9e4098b53/txz.jpg' target='_blank'>京ICP备11029981号-10</a> | 京网文【2020】0038-009号<br>公安备案号11010502035516 | ISBN-978-7-89989-132-2 | 新出审字【2011】186号<br>抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活"
+          },
+          "hide_switcher": {
+            "type": "checkbox",
+            "admintitle": "Forcely hide language switcher",
+            "value": false
+          }
+        }
+      },
+      "footer_links": {
+        "type": "list",
+        "relation_type": "one-to-all",
+        "admintitle": "Footer. Links",
+        "fields": {
+          "text": {
+            "type": "text",
+            "restrictions": {},
+            "admintitle": "Link text"
+          },
+          "url": {
+            "type": "text",
+            "admintitle": "Link url"
+          },
+          "target": {
+            "type": "checkbox",
+            "admintitle": "Set target='_blank' to link. (Open in new tab)"
+          }
+        },
+        "value": [
+          {
+            "text": "玩家客服",
+            "url": "https://wgn.wggames.cn/support/",
+            "target": false
+          },
+          {
+            "text": "用户终端协议",
+            "url": "https://wg.360.cn/user/agreement/list.html",
+            "target": false
+          },
+          {
+            "text": "隐私条款",
+            "url": "https://wg.360.cn/user/agreement/list.html",
+            "target": false
+          },
+          {
+            "text": "服务条款",
+            "url": "https://wg.360.cn/user/agreement/list.html",
+            "target": false
+          }
+        ]
+      },
+      "footer_pegi": {
+        "type": "list",
+        "relation_type": "one-to-all",
+        "admintitle": "Footer. Pegi",
+        "fields": {
+          "img": {
+            "type": "image",
+            "admintitle": "Pegi image"
+          },
+          "url": {
+            "type": "text",
+            "admintitle": "Pegi url"
+          }
+        },
+        "value": []
+      }
+    }</script><script>var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1d1dd9d854eb7d0cd4d226bbbd579234";
+      var s = document.getElementsByTagName("script")[0];
+      if(!window.__lc_build_mode__) {s.parentNode.insertBefore(hm, s);}
+    })();</script><link href="css/app.b72e97bb.css" rel="preload" as="style"><link href="js/app.2574da3a.js" rel="preload" as="script"><link href="js/chunk-vendors.d522009c.js" rel="preload" as="script"><link href="css/app.b72e97bb.css" rel="stylesheet"><style type="text/css" data-id="81405_01689">[data-bg='81405_01689'] {background-image: url(china/v2/bg_v2_m.jpg);}@media screen and (min-width: 1024px) {[data-bg='81405_01689'] {background-image: url(china/v2/bg_v2.jpg);}}</style><style type="text/css" data-id="81407_99607">[data-bg='81407_99607'] {background-image: url(mock/SlideHero/hero-bg_m.jpg);}@media screen and (min-width: 1024px) {[data-bg='81407_99607'] {background-image: url(mock/SlideHero/hero-bg.jpg);}}</style></head><body style="background-color:{{global.bgcolor}};color:{{global.color}}"><noscript><strong>We're sorry but site doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"><div class="fullpage fullpage--sm100"><section data-v-07f90653="" id="slide-default" class="slide slide-default slide-default--textshadow" data-bg="81405_01689" style="background-color: rgb(0, 0, 0);"><div data-v-07f90653="" class="slide-content inner inner--wrapper"><div data-v-07f90653="" class="slide-default__top animation-fade-in-down"><div data-v-46c7cd36="" data-v-07f90653="" data-lcif="china/logo_wot.svg" class="logo-wrap slide-default__logo-wrap"><a data-v-46c7cd36=""><img data-v-46c7cd36="" src="china/logo_wot.svg" alt="World of Tanks"></a><img data-v-46c7cd36="" data-lcelse="" src="china/logo_wot.svg" alt="World of Tanks"></div><div data-v-07f90653="" class="slide-default__sub-title">激活后即可获得奖励！</div></div><div data-v-07f90653="" class="slide-default__middle"><div data-v-07f90653="" class="slide-default__description"></div><div data-v-0142798b="" data-v-07f90653="" class="page_awards"><div data-v-0142798b="" class="awards"><div data-v-0142798b="" class="awards_glow js-animation-awards-glow animation-fade-in" style="animation-delay: 2.9s;"></div><div data-v-0142798b="" class="awards_inner"><div data-v-0142798b="" class="awards_ribbon"><div data-v-0142798b="" class="awards_ribbon-bg animation-fade-in-front js-animation-ribbon" style="animation-delay: 0.8s;"></div></div><div data-v-0142798b="" class="awards_scroll-container"><ul data-v-0142798b="" class="awards_list awards_list__one-prize-0"><li data-v-0142798b="" data-hide="0" class="awards_item awards_item__0 js-animation-award-small-0 animation-fade-in-up" style="animation-delay: 1.1s;"><figure data-v-0142798b="" class="award award__small"><img data-v-0142798b="" src="china/v2/1_reward.png" alt="" class="award_image"><figcaption data-v-0142798b="" class="award_caption">
+                7天坦克世界高级账号
+              </figcaption></figure><div data-v-0142798b="" data-hide="1" class="awards_tooltip"><p data-v-0142798b="" class="awards_tooltip-title"></p><p data-v-0142798b="" class="awards_tooltip-text"></p></div></li><li data-v-0142798b="" data-hide="0" class="awards_item awards_item__0 js-animation-award-small-0 animation-fade-in-up" style="animation-delay: 1.4s;"><figure data-v-0142798b="" class="award award__small"><img data-v-0142798b="" src="china/v2/2_reward.png" alt="" class="award_image"><figcaption data-v-0142798b="" class="award_caption">
+                V级重型坦克A33"奋进"
+              </figcaption></figure><div data-v-0142798b="" data-hide="1" class="awards_tooltip"><p data-v-0142798b="" class="awards_tooltip-title"></p><p data-v-0142798b="" class="awards_tooltip-text"></p></div></li><li data-v-0142798b="" data-hide="0" class="awards_item awards_item__0 js-animation-award-small-0 animation-fade-in-up" style="animation-delay: 1.7s;"><figure data-v-0142798b="" class="award award__small"><img data-v-0142798b="" src="china/v2/3_reward.png" alt="" class="award_image"><figcaption data-v-0142798b="" class="award_caption">
+                100%乘员
+              </figcaption></figure><div data-v-0142798b="" data-hide="1" class="awards_tooltip"><p data-v-0142798b="" class="awards_tooltip-title"></p><p data-v-0142798b="" class="awards_tooltip-text"></p></div></li><li data-v-0142798b="" data-hide="0" class="awards_item awards_item__0 awards_item__big js-animation-award-big-0"><figure data-v-0142798b="" class="award award__big"><img data-v-0142798b="" src="china/v2/4_main.png" alt="" class="award_image award_image__big animation-zoom-in js-award-image" style="animation-delay: 2.9s;"><figcaption data-v-0142798b="" class="award_caption animation-fade-in js-animation-award-caption-big-0" style="animation-delay: 4.2s;">
+                Miho Nishizumi贴花×3<br data-v-0142798b="">鮟鱇徽章×6<br data-v-0142798b="">Panzer Vor!签名×6
+              </figcaption></figure><div data-v-0142798b="" data-hide="1" class="awards_tooltip"><p data-v-0142798b="" class="awards_tooltip-title"></p><p data-v-0142798b="" class="awards_tooltip-text"></p></div></li><li data-v-0142798b="" data-hide="0" class="awards_item awards_item__0 js-animation-award-small-0 animation-fade-in-up" style="animation-delay: 2s;"><figure data-v-0142798b="" class="award award__small"><img data-v-0142798b="" src="china/v2/5_reward.png" alt="" class="award_image"><figcaption data-v-0142798b="" class="award_caption">
+                车位×5
+              </figcaption></figure><div data-v-0142798b="" data-hide="1" class="awards_tooltip"><p data-v-0142798b="" class="awards_tooltip-title"></p><p data-v-0142798b="" class="awards_tooltip-text"></p></div></li><li data-v-0142798b="" data-hide="0" class="awards_item awards_item__0 js-animation-award-small-0 animation-fade-in-up" style="animation-delay: 2.3s;"><figure data-v-0142798b="" class="award award__small"><img data-v-0142798b="" src="china/v2/6_reward.png" alt="" class="award_image"><figcaption data-v-0142798b="" class="award_caption">
+                1200金币
+              </figcaption></figure><div data-v-0142798b="" data-hide="1" class="awards_tooltip"><p data-v-0142798b="" class="awards_tooltip-title"></p><p data-v-0142798b="" class="awards_tooltip-text"></p></div></li><li data-v-0142798b="" data-hide="0" class="awards_item awards_item__0 js-animation-award-small-0 animation-fade-in-up" style="animation-delay: 2.6s;"><figure data-v-0142798b="" class="award award__small"><img data-v-0142798b="" src="china/v2/7_reward.png" alt="" class="award_image"><figcaption data-v-0142798b="" class="award_caption">
+                1500000银币
+              </figcaption></figure><div data-v-0142798b="" data-hide="1" class="awards_tooltip"><p data-v-0142798b="" class="awards_tooltip-title"></p><p data-v-0142798b="" class="awards_tooltip-text"></p></div></li></ul></div></div></div></div><div data-v-3f312f1a="" data-v-07f90653="" class="cta-block slide-default__links animation-fade-in-down animation-fade-in-down__short" style="align-items: center; animation-delay: 4.6s;"><div data-v-3f312f1a="" class="cta-block__inner"><div data-v-3f312f1a="" data-lcif="激活" class="cta-block__item"><a data-v-63afeeb5="" data-v-3f312f1a="" class="cta-base cta cta--responsive cta--block cta--flat" id="slide-default" href="https://wotgame.cn/auth/oid/new/?next=/zh-cn/game/download/" target="_blank">激活</a></div><!----></div><div data-v-3f312f1a="" class="cta-block__description">此奖励仅供坦克世界PC新用户领取。打开此活动页面后，用户需要在同一台设备上的同一次浏览器会话期间点击“激活”按钮，并完成账号注册才能领取奖励。</div></div></div><div data-v-07f90653="" class="slide-default__bottom"></div></div></section></div><footer data-v-1fa82675="" id="footer" class="lcFooter" data-bg="81407_99607" style="background-color: rgb(0, 0, 0);"><div data-v-1fa82675="" class="lcFooter__bg" style="background-color: rgb(0, 0, 0);"></div><div data-v-1fa82675="" class="inner inner--wrapper"><div data-v-1fa82675="" class="lcFooter__top-line"><div data-v-46c7cd36="" data-v-1fa82675="" data-lcif="china/footer_logo.png" class="logo-wrap lcFooter__logo"><a data-v-46c7cd36=""><img data-v-46c7cd36="" src="china/footer_logo.png" alt="World of Warships"></a><img data-v-46c7cd36="" data-lcelse="" src="china/footer_logo.png" alt="World of Warships"></div><ul data-v-1fa82675="" class="lcFooter__links"><li data-v-1fa82675="" class="lcFooter__link"><a data-v-1fa82675="" href="https://wgn.wggames.cn/support/">玩家客服</a></li><li data-v-1fa82675="" class="lcFooter__link"><a data-v-1fa82675="" href="https://wg.360.cn/user/agreement/list.html">用户终端协议</a></li><li data-v-1fa82675="" class="lcFooter__link"><a data-v-1fa82675="" href="https://wg.360.cn/user/agreement/list.html">隐私条款</a></li><li data-v-1fa82675="" class="lcFooter__link"><a data-v-1fa82675="" href="https://wg.360.cn/user/agreement/list.html">服务条款</a></li></ul></div><div data-v-1fa82675="" class="lcFooter__bottom-line"><div data-v-1fa82675="" class="lcFooter__china-logos"><img data-v-1fa82675="" src="china/360.png" alt="" class="lcFooter__360"><a data-v-1fa82675="" href="https://p1.ssl.qhimg.com/d/inn/4be9e4098b53/txz.jpg" target="_blank" rel="noopener" class="lcFooter__ncb"><img data-v-1fa82675="" src="china/ncb_license_logo.png" alt="ncb_license_logo"></a></div><div data-v-1fa82675="" class="lcFooter__content"><div data-v-1fa82675="" class="lcFooter__text"><span data-v-1fa82675="" class="lcFooter__year">© 2011-2021</span><span data-v-1fa82675="">Wargaming.net保留所有权利<br>Copyright 2016 YouXi.com 版权所有 趣游时代(北京)科技有限公司 北京市朝阳区酒仙桥路6号院2号楼1至17层102号内13层1302<br><a href="http://s5.ssl.qhres.com/static/b6e17859264cd813.pdf" target="_blank">京ICP证京B2-20170671</a> | <a href="http://p1.ssl.qhimg.com/d/inn/4be9e4098b53/txz.jpg" target="_blank">京ICP备11029981号-10</a> | 京网文【2020】0038-009号<br>公安备案号11010502035516 | ISBN-978-7-89989-132-2 | 新出审字【2011】186号<br>抵制不良游戏 拒绝盗版游戏 注意自我保护 谨防受骗上当 适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活</span></div></div><ul data-v-1fa82675="" class="lcFooter__pegi"></ul></div></div></footer></div><script src="js/chunk-vendors.d522009c.js"></script><script src="js/app.2574da3a.js"></script></body></html>
